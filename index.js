@@ -22,7 +22,7 @@ program
   .usage("<command> [option]");
 
 program.on("--help", () => {
-  // 使用 figlet 绘制 Logo
+  // 绘制 Logo
   console.log(
     "\r\n" +
       figlet.textSync("lw-cli", {
