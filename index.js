@@ -2,7 +2,8 @@
 const { program } = require("commander");
 const chalk = require("chalk");
 const figlet = require("figlet");
-const create = require('./utils/create')
+const create = require("./utils/create");
+const checkUpdate = require('./utils/checkUpdate')
 
 program
   .command("init <project-name>")
@@ -14,6 +15,13 @@ program
 
     // 创建项目
     create(name, options);
+  });
+
+program
+  .command("update")
+  .description("更新最新脚手架版本")
+  .action(async () => {
+    await checkUpdate();
   });
 
 // 配置版本号信息
